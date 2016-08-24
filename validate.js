@@ -49,7 +49,7 @@
 							break;
 						case "remote":
 							var _res=getSync(arg,val)
-							if(_res==0) return {"error":1,"id":id,"msg":msg}
+							if(!_res || _res==0 || _res=='false') return {"error":1,"id":id,"msg":msg}
 							break;
 					}
 				}
@@ -91,7 +91,7 @@
 				}
 			}
 			if(!!_state){
-				if(!!pass) pass(res)
+				if(!!pass) pass(form)
 			}
 		})
 
