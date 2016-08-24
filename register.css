@@ -1,0 +1,30 @@
+*{margin:0;padding:0;}
+body{font-family:'Microsoft Yahei';}
+.clearfix{*zoom:1;}
+.clearfix:after{content:'';display:block;height:0;visibility:hidden;clear:both;}
+
+.passportHeader-container{width:1200px;margin:0 auto;padding:20px 0;overflow:hidden;}
+.passportHeader-btn{float:right;margin-top:30px;font-size:14px;color:#666;}
+.passportTitle{background:#015287;width:1200px;margin:0 auto;height:45px;line-height:45px;color:#fff;font-size:18px;text-align:center;}
+.register-container{width:1198px;margin:0 auto;border:1px solid #dfdfdf;padding:50px 0;}
+.register-item{width:800px;margin:0 auto;line-height:42px;height:42px;}
+.register-item-name{float:left;width:250px;text-align:right;color:#666;font-size:14px;}
+.register-item-name.required:before{content:'*';color:#fd9887;font-size:12px;}
+.register-item-ipt{margin-left:280px;}
+.register-item-ipt input{height:30px;line-height:30px;padding:5px;border:1px solid #dfdfdf;border-radius:4px;width:300px;font-size:14px;color:#333;}
+.register-item-ipt input:focus{border-color:#999;outline:0;box-shadow:0 0 10px 1px rgba(0,0,0,.1) inset;}
+.register-item-ipt input.error{border-color:#f00;}
+.register-item-ipt.captcha-ipt input{width:215px;}
+.register-item-ipt.captcha-ipt img{height:42px;vertical-align:middle;}
+.register-agree{width:400px;margin:0 auto;padding:30px 0;font-size:13px;color:#666;}
+.register-agree a{color:#015287;text-decoration:none;}
+.register-agree input{vertical-align:middle;}
+.register-btn{display:block;cursor:pointer;height:45px;line-height:45px;color:#fff;background:#015287;border:0 none;box-sizing:content-box;width:400px;margin:0 auto;font-size:15px;font-family:'Microsoft Yahei';border-radius:5px;}
+.register-btn:hover{opacity:.75;filter:alpha(opacity=75)}
+.register-tip{color:#fd9887;font-size:12px;display:block;width:240px;margin:0 auto;height:35px;line-height:35px;}
+.commonFooter-container{color:#999;font-size:13px;text-align:center;padding:20px 0;margin-top:50px;}
+.commonFooter-container a{color:#999;text-decoration:none;}
+.commonFooter-container a:hover{text-decoration:underline;}
+.commonFooter-container .arial{font-family:arial;}
+.commonFooter-links{padding-bottom:10px;}
+.commonFooter-line{display:inline-block;*display:inline;*zoom:1;padding:0 5px;}

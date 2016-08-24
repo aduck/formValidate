@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>register</title>
+	<link rel="stylesheet" href="register.css">
+</head>
+<body>
+	<!--头部-->
+	<div class="passportHeader-container">
+		<a href="" class="passportHeader-btn">已有账号？立即登录</a>
+		<div class="passportHeader-logo"><a href="" target="_blank"><img src="http://file.easeeyes.com/b2b/images/logo.png" alt=""></a></div>
+	</div>
+	<!--内容-->
+	<div class="passportTitle">零售商注册</div>
+	<div class="register-container">
+		<form action="user.php" method="post" name="formUser" enctype="multipart/form-data" id="registerForm">
+			<div class="register-item">
+				<span class="register-item-name required">用户名</span>
+				<div class="register-item-ipt">
+					<input type="text" id="username" name="username" />
+				</div>
+			</div>
+			<span class="register-tip" id="msg_username"></span>
+			<div class="register-item">
+				<span class="register-item-name required">请设置密码</span>
+				<div class="register-item-ipt">
+					<input type="password" id="password" name="password" />
+				</div>
+			</div>
+			<span class="register-tip" id="msg_password"></span>
+			<div class="register-item">
+				<span class="register-item-name required">请确认密码</span>
+				<div class="register-item-ipt">
+					<input type="password" id="confirm_password" name="confirm_password" />
+				</div>
+			</div>
+			<span class="register-tip" id="msg_confirm_password"></span>
+			<div class="register-item">
+				<span class="register-item-name required">验证手机</span>
+				<div class="register-item-ipt">
+					<input type="tel" id="mobile_phone" name="mobile_phone" />
+				</div>
+			</div>
+			<span class="register-tip" id="msg_mobile_phone"></span>
+			<div class="register-item">
+				<span class="register-item-name required">常用邮箱</span>
+				<div class="register-item-ipt">
+					<input type="email" id="email" name="email" />
+				</div>
+			</div>
+			<span class="register-tip" id="msg_email"></span>
+			<div class="register-item">
+				<span class="register-item-name required">验证码</span>
+				<div class="register-item-ipt captcha-ipt">
+					<input type="text" id="captcha" name="captcha" />
+					<img src="captcha.php?813978423" alt="captcha" onclick="this.src='captcha.php?'+Math.random()">
+				</div>
+			</div>
+			<span class="register-tip" id="msg_captcha"></span>
+			<p class="register-agree">
+				<label for="agreed">
+					<input type="checkbox" id="agreed" name="agreement" checked="checked" value="1"> 
+					我已阅读并同意<a href="#">《用户协议》</a>
+				</label>
+			</p>
+			<input type="submit" value="立即注册" class="register-btn" />
+		</form>
+	</div>	
+	<!--底部-->
+	<div class="commonFooter-container">
+		<div class="commonFooter-links">
+			<a href="" target="">关于我们</a>
+			<span class="commonFooter-line">|</span>
+			<a href="" target="">联系我们</a>
+			<span class="commonFooter-line">|</span>
+			<a href="" target="">诚聘英才</a>
+			<span class="commonFooter-line">|</span>
+			<a href="" target="">商务合作</a>
+			<span class="commonFooter-line">|</span>
+			<a href="" target="">隐私保护</a>
+			<span class="commonFooter-line">|</span>
+			<a href="" target="">使用协议</a>
+			<span class="commonFooter-line">|</span>
+			<a href="" target="">网站地图</a>
+		</div>
+		<div class="commonFooter-info">
+			<span class="arial">&copy;</span> 云镜商 2008-2015 版权所有 网站备案号：沪ICP备08112987号-2
+		</div>
+	</div>
+
+	<script src="http://file.easeeyes.com/js/jquery.min.js"></script>
+	<script src="validate.js"></script>
+	<script>
+		var items={
+			"username":[
+				['required','用户名不能为空'],
+				['remote:test.php?username=','用户名已存在']
+			],
+			"password":[
+				['required','密码不能为空'],
+				['minlength:6','密码不少于6位']
+			],
+			"confirm_password":[
+				['required','密码不能为空'],
+				['minlength:6','密码不少于6位'],
+				['equalTo:password','密码不一致']
+			],
+			"mobile_phone":[
+				['required','手机号码不能为空'],
+				[/^(((1[0-9][0-9]{1}))+\d{8})$/,'手机号码格式错误']
+			],
+			"email":[
+				['required','邮箱不能为空'],
+				[/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/,'邮箱格式错误']
+			],
+			"captcha":[
+				['required','验证码不能为空']
+			]
+		}
+
+		validate.init({
+			formId:'registerForm',
+			items:items,
+			fall:function(res){
+				$('#'+res.id).addClass('error')
+				$("#msg_"+res.id).text(res.msg)
+			},
+			success:function(res){
+				$('#'+res.id).removeClass('error')
+				$("#msg_"+res.id).text('')
+			},
+			pass:function(){
+				alert("pass")
+			}
+		})
+	
+	</script>
+</body>
+</html>
