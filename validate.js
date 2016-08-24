@@ -15,7 +15,7 @@
 
 	function getSync(url,data){
 		var xhr=window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-		xhr.open('GET',url+data,false)
+		xhr.open('GET',url+data+'&random='+Math.random(),false)
 		xhr.send(null)
 		return xhr.responseText;
 	}
